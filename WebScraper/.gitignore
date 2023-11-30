@@ -1,3 +1,4 @@
+.gitignore
 dbase.db
 secrets.ini
 headers.txt
