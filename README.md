@@ -80,6 +80,8 @@ git pull origin master
 
 git branch --merged
 
+git commit -m "Adding pdf receipt to Hotel App"
+
 git merge calc-divide
 
 git push origin master
