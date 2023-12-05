@@ -32,12 +32,3 @@ st.plotly_chart(pos_figure)
 st.subheader("Negativity")
 neg_figure = px.line(x=dates, y=negativity, labels={"x": "Date", "y": "Negativity"})
 st.plotly_chart(neg_figure)
-
-fig = px.pie(values=positivity, names=dates, title='Population of European continent')
-fig.show()
-
-
-df = pd.DataFrame({'values': [positivity, negativity, neutral, compound], 'groups' : ['G1', 'G2', 'G3', 'G4']})
-fig1 = px.pie(df, values = 'values', names = 'groups')
-
-fig1.show()
