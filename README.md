@@ -29,8 +29,9 @@ git add -A
 git status
 
 # Remove files from staging area
+git log
 
-git reset
+git reset (or) git reset (commit id)
 
 git status
 
@@ -50,8 +51,8 @@ git clone ../remote_repo.git .
 git remote -v
 git branch -a
 
-# Pusing changes 
-# Commit changes 
+# Pusing changes
+# Commit changes
 
 git diff
 git status
@@ -95,4 +96,3 @@ git branch -d cal-divide
 git branch -a
 
 git push origin --delete cal-divide
-

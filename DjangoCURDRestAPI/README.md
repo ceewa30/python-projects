@@ -8,6 +8,10 @@ python3 -m venv venv
 
 source venv/bin/activate
 
+# To deactivate
+
+deactivate
+
 # Upgrade the pip
 
 pip install --upgrade pip
@@ -53,3 +57,6 @@ pythons manage.py migrate
 
 # Run App API
 python3 manage.py run server
+
+
+python ../manage.py startapp process_storage
