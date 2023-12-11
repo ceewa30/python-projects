@@ -17,3 +17,7 @@ pip install django
 # Setting up the Project
 
 django-admin startproject RestApi .
+
+# adding rest framework to the project
+
+pip install djangorestframework
