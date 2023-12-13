@@ -1,0 +1,19 @@
+POST http://127.0.0.1:8000/get
+Content-Type: application/json
+
+{  }
+
+####
+
+POST http://127.0.0.1:8000/signup
+Content-Type: application/json
+
+{  } 
+
+####
+
+GET http://127.0.0.1:8000/test_token
+Content-Type: application/json
+Authorization: Token dd535639439ea1ea22a66bd675ad283ceedf706e
+
+{}
