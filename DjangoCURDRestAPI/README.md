@@ -14,7 +14,13 @@ pip install --upgrade pip
 
 # Install Django
 
+python3 -m pip install django
+
 pip install django
+
+# To check django is installed
+
+django-admin
 
 # Install Django Rest Framework
 

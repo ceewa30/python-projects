@@ -1,6 +1,8 @@
 import glob
 import streamlit as st
+import plotly.offline as pyo
 import plotly.express as px
+import matplotlib.pyplot as plt
 from nltk.sentiment import SentimentIntensityAnalyzer
 import pandas as pd
 
@@ -16,6 +18,7 @@ for filepath in filepaths:
     with open(filepath, "r") as file:
         content = file.read()
     scores = analyzer.polarity_scores(content)
+    print(scores)
     positivity.append(scores["pos"])
     negativity.append(scores["neg"])
     neutral.append(scores["neu"])
@@ -23,6 +26,14 @@ for filepath in filepaths:
 
 print(positivity)
 dates = [name.strip(".txt").strip("diary/") for name in filepaths]
+
+for score in scores:
+    print(score)
+    # scores_sf = score
+    # scores_sf.head()
+
+pyo.plot(score.neg)
+pyo.show()
 
 st.title("Diary Tone")
 st.subheader("Positivity")
