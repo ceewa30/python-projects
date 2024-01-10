@@ -2,76 +2,18 @@
 #  https://hangmanwordgame.com/?fca=1&success=0#/
 
 import random
-
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+from hangman_art import stages, logo
+from hangman_words import word_list
 
 
-word_list = ["ardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 
 # Testing code
-print(f"The solution is {chosen_word}.")
-
+# print(f"The solution is {chosen_word}.")
+print(logo)
 
 wordlen = len(chosen_word)
 
-#TODO-1: - Create a variable called 'lives'to keep track of the number of lives left.
-#Set 'lives' to equal 6.
 lives = 6
 
 display = []
@@ -83,24 +25,25 @@ end_of_game = False
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
 
+    if guess in display:
+        print(f"You've already guessed {guess}")
+
     for position in range(wordlen):
         letter = chosen_word[position]
         if letter == guess:
             display[position] = letter
-#TODO-2: - If guess is not a letter in the chosen_word, Then reduce 'lives' by 1.
-# If lives goes down to 0 then the game should stop and it should print "You lose."
+
     if guess not in chosen_word:
+        print(f"You guessed {guess}, that's not in the word. You lose a life.")
         lives -= 1
         if lives == 0:
             end_of_game = True
-            print("You lose.")
+            print(f"The puzzle word is : {chosen_word} You lose.")
 
-# Join all the elements in the list and turn it into a String.
     print(display)
 
     if "_" not in display:
         end_of_game = True
         print("You win.")
 
-#TODO-3: - print the ASCII art from 'stages' that corresponds to the current number of 'lives' the user has remaining.
     print(stages[lives])
