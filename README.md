@@ -96,3 +96,26 @@ git branch -d cal-divide
 git branch -a
 
 git push origin --delete cal-divide
+
+
+
+======================================================
+
+First make you local master upto date
+
+git checkout master
+
+git pull --rebase // You can choose to merge here also.
+
+Then go to your branch. Rebase master onto it.
+
+git checkout <branch>
+
+git rebase master
+
+
+
+git checkout master
+git pull               # to update the state to the latest remote master state
+git merge develop      # to bring changes to local master from your develop branch
+git push origin master # push current HEAD to remote master branch
