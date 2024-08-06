@@ -13,22 +13,12 @@ class Paddle(Turtle):
         self.goto(0, -250)
 
     def go_right(self):
-        x = self.xcor()
-        x += 20
-        self.setx(x)
-        print(x)
-        right_key = True
-        while right_key:
-            if x == 360 and self.xcor() == 360:
-                print("you reached right")
-                right_key = False
+        if self.xcor() <= 340:
+            self.goto(self.xcor() + 8,self.ycor())
 
     def go_left(self):
-        x = self.xcor()
-        x -= 20
-        self.setx(x)
-        if self.xcor() == -360:
-            print("you reached")
+        if self.xcor() >= -360:
+            self.goto(self.xcor() - 8,self.ycor())
 
     def space(self):
         self.ball.move()
