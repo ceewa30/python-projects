@@ -14,11 +14,11 @@ class Paddle(Turtle):
 
     def go_right(self):
         if self.xcor() <= 340:
-            self.goto(self.xcor() + 8,self.ycor())
+            self.goto(self.xcor() + 20,self.ycor())
 
     def go_left(self):
         if self.xcor() >= -360:
-            self.goto(self.xcor() - 8,self.ycor())
+            self.goto(self.xcor() - 20,self.ycor())
 
     def space(self):
         self.ball.move()

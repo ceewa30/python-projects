@@ -18,6 +18,10 @@ screen.listen()
 screen.onkey(paddle.go_right, "Right")
 screen.onkey(paddle.go_left, "Left")
 
+def resume():
+    screen.goto(-100, 260)
+    screen.write("Team A ", align="center", font=("Courier", 24, "normal"))
+
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
@@ -36,8 +40,9 @@ while game_is_on:
     if ball.distance(paddle) < 40 and ball.ycor() < -50:
         ball.y_bounce()
 
+    # Detect paddle misses
     if ball.ycor() < -300:
-        screen.onkey(paddle.space, "space")
+        screen.onkey(ball.reset_position, "space")
 
 
 
