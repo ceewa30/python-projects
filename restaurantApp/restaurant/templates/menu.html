@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Menu Section -->
+<section id="menu" class="menu section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Our Menu</h2>
+    <p><span>Check Our</span> <span class="description-title">Yummy Menu</span></p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+      {%  for category in menu_types %}
+      <div class="nav-item">
+        <button class="nav-link" data-id="menu-{{ category }}" data-bs-toggle="tab" data-bs-target="#menu-{{ category }}">
+          {{ category | capfirst}}
+        </button>
+      </div><!-- End tab nav item -->
+      {% endfor %}
+    </div>
+
+    <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+      {%  for category in menu_types %}
+      <div class="tab-pane fade" id="menu-{{ category }}">
+        <div class="tab-header text-center">
+          <p>Menu</p>
+          <h3>{{ category | capfirst}}</h3>
+        </div>
+        <div class="row gy-5">
+          {% for menu_item in menu_items %}
+          {%  if menu_item.menu_type == category %}
+          <div class="col-lg-4 menu-item">
+            <img src="/media/{{ menu_item.menu_image }}" class="menu-img img-fluid" alt="">
+            <h4>{{ menu_item.menu_item }}</h4>
+            <p class="ingredients">
+              {{ menu_item.description }}
+            </p>
+            <p class="price">
+              ${{ menu_item.price }}
+            </p>
+          </div><!-- Menu Item -->
+          {%  endif %}
+          {%  endfor %}
+        </div>
+      </div><!-- End Starter Menu Content -->
+      {%  endfor %}
+    </div>
+
+  </div>
+
+</section><!-- /Menu Section -->
+
+{% endblock %}
+{%  block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+{%  endblock extra_js %}

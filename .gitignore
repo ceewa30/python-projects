@@ -5,6 +5,14 @@ creat.py
 image.png
 images.png
 read.py
+../__pycache__/
+../*/__pycache__/
+../*/*/__pycache__/
+../*/*/*/__pycache__/
+.env/
+.venv/
+venv/
+__pycache__/
 /__pycache__/
 .gitignore
 db.sqlite3

@@ -1,0 +1,166 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{%  block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/order.css' %}">
+{%  endblock extra_css %}
+{% block content %}
+<section id="order" class="menu section">
+    <!-- Order Title -->
+    <div class="container section-title">
+        <h2>Order Here</h2>
+        <p><span>Check Our</span> <span class="description-title">Yummy Menu</span></p>
+    </div><!-- End Order Title -->
+
+    <div class="container">
+      <div class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        {%  for category in menu_types %}
+        <div class="nav-item">
+          <button class="nav-link" data-id="menu-{{ category }}" data-bs-toggle="tab" data-bs-target="#menu-{{ category }}">
+            {{ category | capfirst}}
+          </button>
+        </div><!-- End tab nav item -->
+        {% endfor %}
+      </div>
+      <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+        <div class="tab-pane fade active show" id="menu-starters">
+          <div class="tab-header text-center">
+            <p>Menu</p>
+            <h3>Starters</h3>
+          </div>
+          <div class="gy-5">
+
+            <div class="order-item">
+              <!-- <img src="assets/img/menu/menu-item-1.png" alt=""></a> -->
+              <div class="item-name">
+                <h4>Magnam Tiste</h4>
+              </div>
+              <div class="description">
+                <p class="ingredients">
+                  Lorem, deren, trataro, filede, nerada
+                </p>
+              </div>
+              <div class="price">
+                <p class="price">
+                  $5.95
+                </p>
+              </div>
+              <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                  +
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                  -
+                </button>
+              </div>
+            </div><!-- Menu Item -->
+          </div>
+        </div><!-- End Starter Menu Content -->
+
+      </div>
+    </div>
+
+</section>
+
+<div class="shopping-cart">
+  <!-- Title -->
+  <div class="title">
+    Shopping Bag
+  </div>
+
+  <!-- Product #1 -->
+  <div class="item">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+
+    <div class="image">
+      <!-- <img src="item-1.png" alt="" /> -->
+    </div>
+
+    <div class="description">
+      <span>Common Projects</span>
+      <span>Bball High</span>
+      <span>White</span>
+    </div>
+
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        +
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        -
+      </button>
+    </div>
+
+    <div class="total-price">$549</div>
+  </div>
+
+  <!-- Product #2 -->
+  <div class="item">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+
+    <div class="image">
+      <!-- <img src="item-2.png" alt="" /> -->
+    </div>
+
+    <div class="description">
+      <span>Maison Margiela</span>
+      <span>Future Sneakers</span>
+      <span>White</span>
+    </div>
+
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        +
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        -
+      </button>
+    </div>
+
+    <div class="total-price">$870</div>
+  </div>
+
+  <!-- Product #3 -->
+  <div class="item">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+
+    <div class="image">
+      <!-- <img src="item-3.png" alt="" /> -->
+    </div>
+
+    <div class="description">
+      <span>Our Legacy</span>
+      <span>Brushed Scarf</span>
+      <span>Brown</span>
+    </div>
+
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        +
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        -
+      </button>
+    </div>
+
+    <div class="total-price">$349</div>
+  </div>
+</div>
+
+{% endblock %}
+{%  block extra_js %}
+<script src="{% static 'js/order.js' %}"></script>
+{%  endblock extra_js %}
