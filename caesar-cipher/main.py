@@ -26,7 +26,7 @@ while not should_end:
     text = input("Type your message\n").lower()
     shift = int(input("Type the shift number:\n"))
 
-    shift = shift % 26
+    shift = shift % len(alphabet)
 
     caesar(cipher_direction=direction, new_text=text, new_shift=shift)
 

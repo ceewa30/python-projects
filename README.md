@@ -3,7 +3,7 @@ git --version
 # Set Config Values
 
 git config --global user.name "ceewa30"
-git config --global user.email "ceewa30@gmail.com"
+
 
 git config --list
 
